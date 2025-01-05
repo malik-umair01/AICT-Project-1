@@ -1,0 +1,252 @@
+#wrapper-canvas canvas{
+    max-width: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Nunito Sans", serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.main{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+}
+
+.btn{
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: green;
+    border: 1px solid green;
+    cursor: pointer;
+    outline: none;
+}
+
+.modal{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0.25) ;
+    width: 80vw;
+    height: 80vh;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: #191919;
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: top 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    /* flex-direction: column; */
+}
+
+img{
+    height: 250px;
+}
+
+h2 , button{
+    margin: 15px 0;
+}
+
+.close,
+.close:link,
+.close:visited{
+    color: #ccc;
+    text-decoration: none;
+    position: absolute;
+    top:10px;
+    right: 20px;
+    font-size: 1.5rem;
+    display: inline-block;
+    line-height: 1;
+    transition: all 0.2s;
+    background-color: rgb(39, 41, 45);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%
+}
+
+.close:hover{
+    transform: rotate(90deg);
+}
+
+
+
+.modal:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal:target .content{
+    opacity: 1;
+    transform: translate(-50% ,-50% ) scale(1);
+}
+
+.main-h{
+    color: rgb(23, 136, 174);
+    font-size: 2rem;
+}
+
+.heading{
+    margin: 60px  0;
+    
+
+}
+.about{
+    width: 40%;
+    margin: 50px 100px;
+    font-size: 12px;
+}
+
+
+.ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    margin-bottom: 50px;
+}
+
+.list{
+    list-style: none;
+    border: 2px solid rgb(83, 83, 83);
+    border-radius: 30px;
+    font-size: 13px;
+    padding: 5px 7px;
+}
+
+.para{
+    font-size: 20px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.coder{
+    height: 700px;
+    width: 700px;
+}
+
+.tooltip-container{
+    /* border: 1px solid white; */
+    width: 350px;
+    height: 100px;
+    margin: 30px 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons{
+    height: 50px;
+    width: 50px;
+}
+
+.tooltip-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+    gap: 20px;
+    font-size: 1.5rem;
+    cursor: default;
+    position: relative;
+}
+
+.tooltip-icon img{
+    position: relative;
+    z-index: 5;
+}
+
+.mongoDB{
+    color: #47A248;
+}
+
+.react{
+    color: #61DAFB;
+}
+
+.express{
+    color: #8CC84B;
+}
+
+.tooltip{
+    font-size: 14px;
+    position: absolute;
+    background-color: #47A248;
+    top: 16px;
+    opacity: 0;
+    border-radius: 24px;
+    padding: 8px 14px;
+    color: #191919;
+    transition: top 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip-icon:hover .tooltip{
+    top: -50px;
+    opacity: 1;
+}
+
+.tooltip span{
+    position: relative;
+    z-index: 1;
+}
+
+.tooltip::after{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    transform: rotate(45deg) translate(-50%);
+    left: 47%;
+    bottom: -12px;
+    background-color: inherit;
+}
+
+.mongoDB .tooltip{
+    background-color: #47A248;
+    color: white;
+}
+
+.express .tooltip{
+    background-color: #fff;
+    
+}
+
+.react .tooltip{
+    background-color: #61DAFB;
+}
+
+.node .tooltip{
+    background-color: #8CC84B;
+}
